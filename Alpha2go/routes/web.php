@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProdutosController;
+use App\Http\Controllers\ProdutoController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,9 @@ use App\Http\Controllers\ProdutosController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+require __DIR__.'/auth.php';
 
-Route::get('/produtos', [ProdutosController::class, 'index'])->name('produtos.index');
+Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
+Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
+
+
