@@ -1,3 +1,4 @@
 
 Alpha2go/app/Http/Controllers/ProdutosController.php
 Alpha2go/app/Models/Produtos.php
+Alpha2go/resources/views/Produtos/index.blade.php
