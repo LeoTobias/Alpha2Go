@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('produtos', function (Blueprint $table) {
+        Schema::create('produto', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->string('descrição');
-            $table->string('preço');
-            $table->string('desconto');
-            $table->string('ativo');
+            $table->string('NOME');
+            $table->string('DESC');
+            $table->decimal('PRECO');
+            $table->decimal('DESCONTO');
+            $table->string('ATIVO');
             $table->timestamps();
         });
     }
