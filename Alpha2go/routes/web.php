@@ -21,3 +21,5 @@ Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
 
 
+Route::get('/usuario', [UserController::class, 'index'])->name('usuario.index');
+Route::get('/usuario/{usuario}', [UserController::class, 'show'])->name('usuario.show');

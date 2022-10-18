@@ -29,6 +29,10 @@ class User extends Authenticatable
     ];
 
     protected $table = "USUARIO";
-    public $timestamps = false;
+
     public $primaryKey = "USUARIO_ID";
+
+    public $timestamps = false;
+    
+  
 }
