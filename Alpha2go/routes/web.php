@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\UsuarioController;
 
 
 /*
@@ -21,5 +22,5 @@ Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
 
 
-Route::get('/usuario', [UserController::class, 'index'])->name('usuario.index');
-Route::get('/usuario/{usuario}', [UserController::class, 'show'])->name('usuario.show');
+Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
+Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usuario.show');
