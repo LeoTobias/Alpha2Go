@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CategoriaController;
 
 
 /*
@@ -24,3 +25,6 @@ Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('prod
 
 Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usuario.show');
+
+Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('/categoria/{categoria}', [CategoriaController::class, 'show'])->name('categoria.show');
