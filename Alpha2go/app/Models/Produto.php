@@ -17,5 +17,12 @@ class Produto extends Model
 
     public $timestamps = false;
 
+    public $foreignKey = "CATEGORIA_ID";
+
+    public function Categoria() {
+        return $this->belongsTo(Categoria::class, 'CATEGORIA_ID');
 }
+
+}
+
 
