@@ -1,10 +1,10 @@
-@foreach ($users as $user)
+@foreach ($usuarios as $usuario)
 
-    <li>{{$user->USUARIO_ID}}
-        {{$user->USUARIO_NOME}}
-        {{$user->USUARIO_EMAIL}}
-        {{$user->USUARIO_SENHA}}
-        {{$user->USUARIO_CPF}}
+    <li>{{$usuario->USUARIO_ID}}
+        {{$usuario->USUARIO_NOME}}
+        {{$usuario->USUARIO_EMAIL}}
+        {{$usuario->USUARIO_SENHA}}
+        {{$usuario->USUARIO_CPF}}
  </li>
 
 @endforeach

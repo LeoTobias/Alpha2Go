@@ -1,0 +1,1 @@
+{{$categoria->CATEGORIA_NOME}}

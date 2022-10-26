@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CategoriaController;
 
 
 /*
@@ -18,9 +19,17 @@ use App\Http\Controllers\UsuarioController;
 
 require __DIR__.'/auth.php';
 
+Route::get('/', function(){
+    return view ('welcome');
+});
+
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
 
-
 Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
 Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usuario.show');
+
+Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
+Route::get('/categoria/{categoria}', [CategoriaController::class, 'show'])->name('categoria.show');
+
+
