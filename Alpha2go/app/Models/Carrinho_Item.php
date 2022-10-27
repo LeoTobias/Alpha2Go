@@ -13,7 +13,14 @@ class Carrinho_Item extends Model
 
     protected $table="CARRINHO_ITEM";
 
-    protected $primaryKey = "USUARIO_ID";
+    protected $foreignKey = "USUARIO_ID";
+
+   // protected $foreignKey = 'PRODUTO_ID';
 
     public $timestamps = false;
+
+    public function Usuario() {
+        return $this->belongsTo(Usuario::class, 'USUARIO_ID');
+}
+
 }

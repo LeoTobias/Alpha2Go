@@ -13,8 +13,13 @@ class Produto_Estoque extends Model
 
     protected $table="PRODUTO_ESTOQUE";
 
-    protected $primaryKey = "PRODUTO_ID";
+    protected $foreignKey = "PRODUTO_ID";
 
     public $timestamps = false;
+
+    public function Produto() {
+        return $this->belongsTo(Produto::class, 'PRODUTO_ID');
+
+}
 
 }
