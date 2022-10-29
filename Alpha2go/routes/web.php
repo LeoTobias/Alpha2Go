@@ -20,7 +20,15 @@ use App\Http\Controllers\CategoriaController;
 require __DIR__.'/auth.php';
 
 Route::get('/', function(){
-    return view ('welcome');
+    return view ('site.home')->name('site.home');
+});
+
+Route::get('/carrinho', function(){
+    return view ('site.carrinho')->name('site.carrinho');
+});
+
+Route::get('/produto', function(){
+    return view ('site.produto')->name('site.produto');
 });
 
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
