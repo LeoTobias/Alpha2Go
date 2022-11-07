@@ -11,38 +11,39 @@
   <link href="/Alpha2go/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="/Alpha2go/vendor/aos/aos.css" rel="stylesheet">
 
-  <link href="site/style.css" rel="stylesheet">
-  <script src="js/script.js"></script>
+  <link href="{{ asset('site/css/style.css') }}" rel="stylesheet">
+  <link href="{{ asset('site/css/carrinho.css') }}" rel="stylesheet">
 
-  <script src="/Alpha2go/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/Alpha2go/vendor/aos/aos.js"></script>
+  <script src="{{ asset('site/js/script.js') }}"></script>
+
+  <script src="/Alpha2Go/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/Alpha2Go/vendor/aos/aos.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-
+  
   <title>Alpha2Go</title>
 </head>
 <body>
 
-<header id="header" class="header fixed-top d-flex align-items-center col">
+<header id="header" class="header navbar fixed-top d-flex align-items-center col">
     <div class="container d-flex align-items-center justify-content-between">
-      <a href="home.blade.php" class="logo d-flex align-items-center">
-        <img src="imagens/logoAlpha.png" alt="">
+      <a href="{{url('/')}}" class="logo d-flex align-items-center">
+        <img src="{{ asset('site/imagens/logoAlpha.png') }}" alt="">
         <h1>Alpha2Go<span>.</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="">Home</a></li>
           <li><a href="#cardapio">Cardapio</a></li>
-          <li><a href="#footer">Contato</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <a class="btn-book-a-table" href="{{ route('site.carrinho')}}"><img id="carrinho" src="imagens/carrinho.png"></a>
+      <a class="btn-book-a-table" href="{{ url('carrinho') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a>
     </div>
 </header>
-
-
-@yield('content')
-
+<div class="conteudo">
+  @yield('conteudo')
+</div>
 
 <footer id="footer" class="footer">
   <div class="container">
@@ -94,5 +95,8 @@
     </div>
   </div>
 </footer>
+
+
+
 </body>
 </html>
