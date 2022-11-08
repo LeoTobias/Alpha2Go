@@ -23,6 +23,10 @@ Route::get('/', function(){
     return view ('site.home');
 });
 
+Route::get('/login', function(){
+    return view ('site.login');
+});
+
 Route::get('/carrinho', function(){
     return view ('site.carrinho');
 });
