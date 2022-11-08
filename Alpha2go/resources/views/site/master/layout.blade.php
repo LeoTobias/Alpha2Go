@@ -15,6 +15,8 @@
   <link href="{{ asset('site/css/style.css') }}" rel="stylesheet">
   <link href="{{ asset('site/css/carrinho.css') }}" rel="stylesheet">
   <link href="{{ asset('site/css/login.css') }}" rel="stylesheet">
+  <link href="{{ asset('site/css/sucesso.css') }}" rel="stylesheet">
+
 
   <script src="{{ asset('site/js/script.js') }}"></script>
 
@@ -37,8 +39,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="">Home</a></li>
-          <li><a href="#cardapio">Cardapio</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="{{ url('/.#cardapio') }}">Cardapio</a></li>
+          <li><a href="{{ url('/.#contato') }}">Contato</a></li>
         </ul>
       </nav>
       <nav id="navbar" class="navbar">

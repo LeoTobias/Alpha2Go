@@ -31,6 +31,10 @@ Route::get('/carrinho', function(){
     return view ('site.carrinho');
 });
 
+Route::get('/sucesso', function(){
+    return view ('site.sucesso');
+});
+
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
 

@@ -141,16 +141,20 @@
             </div>
             <div class="row carrinhoTotal">
                 <div class="col-md-6">
-                    <form action="#" method="post">
+                    <!-- <form action="#" method="post">
                         <input type="text" name="name" placeholder="Código do cupom"><input type="submit" value="Adicionar cupom">
-                    </form>
+                    </form> -->
                 </div>
 
                 <div class="col-md-3 text-right">
+                    <a href="{{ url('/.#cardapio') }}">
                     <button type="button" class="btn btn-outline-primary-grey grey">Continuar comprando</button>
+                    </a>
                 </div>
                 <div class="col-md-3">
-                    <button type="button" class="btn btn-outline-primary-red">Finalizar compra</button>
+                   <a href="{{ url('sucesso') }}">
+                   <button  type="button" class="btn btn-outline-primary-red">Finalizar compra</button>
+                   </a> 
                 </div>
             </div>
             <hr><br>
