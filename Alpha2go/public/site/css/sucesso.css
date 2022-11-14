@@ -1,0 +1,57 @@
+.container .pedido_ok {
+    margin-bottom: 50px;
+}
+.container .btn-outline-primary {
+    color: #ffffff;
+    background-color: #de3434;
+    border-color: #de3434;
+    text-transform: uppercase;
+}
+.container .btn-outline-primary:hover {
+    font-weight: 500;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+.container .btn {
+    font-weight: 300;
+    width: 240px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 5em;
+
+}
+.sucesso .sub_titulo p {
+    max-width: 95%;
+}
+.sucesso {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+}
+
+.sucesso .sub_titulo {
+    margin-top: 30px;
+    font-size: 16px;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    font-style: italic;
+    font-weight: 100;
+    text-align: center;
+    justify-content: center;
+}
+.sucesso .sub_titulo p {
+    max-width: 50%;
+}
+
+.sucesso .divisao {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sucesso .divisao p {
+    margin-top: 5px;
+    width: 68px;
+    height: 5px;
+    background-color: #de3434;
+}
