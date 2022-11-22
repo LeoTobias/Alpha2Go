@@ -21,7 +21,19 @@ use App\Http\Controllers\CarrinhoController;
 require __DIR__.'/auth.php';
 
 Route::get('/', function(){
-    return view ('welcome');
+    return view ('site.home');
+});
+
+Route::get('/login', function(){
+    return view ('site.login');
+});
+
+Route::get('/carrinho', function(){
+    return view ('site.carrinho');
+});
+
+Route::get('/sucesso', function(){
+    return view ('site.sucesso');
 });
 
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');

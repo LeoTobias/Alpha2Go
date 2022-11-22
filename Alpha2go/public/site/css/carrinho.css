@@ -1,0 +1,245 @@
+.carrinho {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.carrinhoTotal {
+  margin-top: 30px!important;
+}
+
+.carrinho h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ebebeb;
+  font-weight: 400;
+}
+.carrinho .no_border {
+  border: none;
+}
+.carrinho .center {
+  text-align: center;
+  font-weight: 300;
+}
+
+.carrinho .finalCompra .total_compra,
+.carrinho .finalCompra .preco_frete,
+.carrinho .finalCompra .valor_total {
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  height: 54px;
+  width: 100%;
+  background-color: #fcfbfa;
+  align-items: center;
+  border-radius: 2px;
+}
+
+.carrinho .finalCompra .preco_frete {
+  margin-top: 20px;
+}
+.carrinho .finalCompra .valor_total {
+  margin-top: 20px;
+  background-color: #333333;
+  color: #ffffff;
+}
+.carrinho .finalCompra h4 {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 35px;
+}
+.carrinho .finalCompra .btn {
+  width: 49%;
+  margin-top: 20px;
+}
+.carrinho .finalCompra .btn-outline-primary-red {
+  background-color: #ededed;
+  border: none;
+  color: #333333 !important;
+  transition: all 0.3s ease-out;
+}
+.carrinho .finalCompra .btn-outline-primary-red:hover {
+  background-color: #000;
+  color: #fff !important;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+}
+
+.carrinho .btn-outline-primary-grey{
+  background-color: #eeeeee;
+  border: none;
+  margin-right: 15px;
+  transition: all 0.3s ease-out;
+}
+.carrinho .btn-outline-primary-grey:hover {
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+}
+.carrinho .grey {
+  width: 80%!important;
+  margin-right: 0;
+}
+.carrinho .btn-outline-primary-red {
+  background-color: #de3434;
+  border: none;
+  color: #ffffff !important;
+  transition: all 0.3s ease-out;
+}
+.carrinho .btn-outline-primary-red:hover {
+  background-color: #1da448;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+}
+.carrinho .btn{
+  text-transform: uppercase;
+  width: 100%;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  user-select: none;
+  border: none;
+  height: 54px;
+  padding: 0.375rem 0.75rem;
+  color: #333;
+  line-height: 1.5;
+  border-radius: 50px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.carrinho input[type="text"]{
+  color: #ffffff;
+  border-radius: 50px;
+  border: 1px solid #ebebeb;
+  height: 54px;
+  width: 100%;
+  color: #333333;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  padding-left: 40px;
+}
+.carrinho input[type="text"]::placeholder {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  color: #999999;
+  opacity: 1;
+}
+.carrinho input[type="submit"]{
+  position: absolute;
+  height: 54px;
+  border: none;
+  border-radius: 50px;
+  width: 200px;
+  margin-left: -200px;
+  background-color: #1da448;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease-out;
+}
+.carrinho input[type="submit"]:hover{
+  cursor: pointer;
+  background-color: #de3434;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-out;
+}
+.carrinho .top_tab {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #ebebeb;
+  margin: 0;
+}
+.carrinho .mais,
+.carrinho .menos {
+  cursor: pointer;
+  outline: 0;
+  background: none;
+  border: 0;
+}
+.carrinho .contagem {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  background-color: #fcfbfa;
+  border-radius: 25px;
+}
+.carrinho .flex-tab {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ebebeb;
+  margin: 0;
+}
+
+.carrinho .flex-tab .preco p,
+.carrinho .flex-tab .total p {
+  position: relative;
+}
+.carrinho .flex-tab .preco p:before,
+.carrinho .flex-tab .total p:before{
+  content: "";
+  width: 1px;
+  height: 100px;
+  background-color: #ebebeb;
+  display: block;
+  position: absolute;
+  margin-top: -35px;
+  margin-left: -15px;
+}
+.carrinho .flex-tab .preco p:after,
+.carrinho .flex-tab .total p:after{
+  content: "";
+  width: 1px;
+  height: 100px;
+  background-color: #ebebeb;
+  display: block;
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 184px;
+}
+.carrinho .col-md-2 {
+  text-align: center;
+}
+.carrinho .nome_titulo {
+  text-transform: uppercase;
+  font-size: 17px;
+  color: #222222;
+  margin-left: -15px;
+}
+.carrinho .preco_titulo
+.carrinho .qnt_titulo,
+.carrinho .total_titulo {
+  text-transform: uppercase;
+  font-size: 17px;
+  text-align: center;
+  color: #222222;
+}
+.carrinho .carrinho_item{
+  display: flex;
+  align-items: center;
+}
+.carrinho .carrinho_item .caption h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.carrinho .carrinho_item .caption h5 {
+  font-size: 18px;
+  font-weight: 400;
+}
+.carrinho .carrinho_item .caption p {
+  font-size: 12px;
+  font-weight: 300;
+}
+.carrinho .carrinho_item img{
+  height: 140px;
+  margin: 30px 25px 30px 12px;
+}
