@@ -35,6 +35,10 @@ Route::get('/sucesso', function(){
     return view ('site.sucesso');
 });
 
+Route::get('/checkout', function(){
+    return view ('site.checkout');
+});
+
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
 
