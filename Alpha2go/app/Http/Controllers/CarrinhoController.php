@@ -9,10 +9,15 @@ use App\Models\Carrinho;
 class CarrinhoController extends Controller
 
 {
-    public function index(){
-        $carrinho_item = Carrinho::where('USUARIO_ID', Auth()->user()->id)->get();
-        return view('carrinho.index')->with('carrinho_item', $item_qtd);
+    public function add ( Produto $Produto) {
+        dd($produto);
     }
+
+
+   // public function index(){
+     //   $carrinho_item = Carrinho::where('USUARIO_ID', Auth()->user()->id)->get();
+      //  return view('carrinho.index')->with('carrinho_item', $item_qtd);
+   // }
 }
 
 

@@ -45,6 +45,7 @@ Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usua
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 Route::get('/categoria/{categoria}', [CategoriaController::class, 'show'])->name('categoria.show');
 
-
-Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
+Route::get('/carrinho/add/{produto}', [CarrinhoController::class, 'add'])->name('carrinho.add');
+//Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
 //Route::get('/carrinho/{carrinho}', [CarrinhoController::class, 'show'])->name('carrinho.show');
+
