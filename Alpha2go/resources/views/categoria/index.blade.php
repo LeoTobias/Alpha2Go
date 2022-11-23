@@ -42,7 +42,7 @@
                 <tr>
                     <td>{{$categoria->CATEGORIA_ID}}</td>
                     <td>{{$categoria->CATEGORIA_NOME}} ({{$categoria->produtos->count()}})</td>
-                    {{$categoria->CATEGORIA_DESC}}
+                     <td> {{$categoria->CATEGORIA_DESC}}</td>
                     <td>
                     <td> 
                         <a href="#" class="btn btn-primary btn-sm">Visualizar</a>     
