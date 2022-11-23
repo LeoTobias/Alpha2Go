@@ -35,4 +35,6 @@ class User extends Authenticatable
     public $timestamps = false;
     
   
+  public function Pedido() {
+    return $this->hasMany(Pedido::class, 'USUARIO_ID');
 }
