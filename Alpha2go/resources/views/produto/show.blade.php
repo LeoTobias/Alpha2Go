@@ -1,15 +1,9 @@
-//{{$produto->PRODUTO_NOME}}
-//{{$produto->Categoria->CATEGORIA_NOME}}
-//{{$produto->Imagem->IMAGEM_NOME}}
-
-@extends('layouts.store')
-
 @section('content')
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a class="lt-cinza" href="{{url('/')}}">Loja do Senac</a></li>
+        <li class="breadcrumb-item"><a class="lt-cinza" href="{{url('/')}}">Alpha2Go</a></li>
         <li class="breadcrumb-item"><a class="lt-cinza" href="{{ route('categoria.show', $produto->categoria->categoria_id) }}">{{ $produto->categoria->categoria_nome }}</a></li>
-        <li class="breadcrumb-item active" aria-current="page"><a class="lt-cinza" href="">{{ $product->name }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a class="lt-cinza" href="">{{ $produto->PRODUTO_NOME }}</a></li>
     </ol>
 </nav>
 <div class="row">
