@@ -33,8 +33,9 @@ class User extends Authenticatable
     public $primaryKey = "USUARIO_ID";
 
     public $timestamps = false;
-    
-  
+
+
   public function Pedido() {
     return $this->hasMany(Pedido::class, 'USUARIO_ID');
+}
 }

@@ -15,6 +15,7 @@
     {{session()->get('success')}}
 </div>
 @endif
+
     <h1> Lista de Produtos </h1>
     <div class="row mt-4">
         <table class="table table-stripped">
@@ -33,15 +34,20 @@
                 @foreach($produtos as $produto )
                 <tr>
                     <td>{{$produto->PRODUTO_ID}}</td>
-                    <td>{{$produto->Imagens[0]->IMAGEM_URL}}<td>
-                    <td> {{$produto->PRODUTO_NOME}}</td>
-                    <td>{{$produto->PRODUTO_PRECO}}</td>
+                    @if(count($produto->Imagens) > 0)
+                        <td>{{$produto->Imagens[0]->IMAGEM_URL}}<td>
+                    @else
+                        <td>Sem Imagem<td>
+                    @endif
+                    <td>{{$produto->PRODUTO_NOME}}</td>
                     <td>{{$produto->PRODUTO_DESC}}</td>
-                    <td>{{$produto->CATEGORIA_ID}}</td>
+                    <td>{{$produto->PRODUTO_PRECO}}</td>
                     <td>{{$produto->PRODUTO_DESCONTO}}</td>
+                    <td>{{$produto->CATEGORIA_ID}}</td>
                     <td>{{$produto->PRODUTO_ATIVO}}</td>
 
-                        <a href="#" class="btn btn-primary btn-sm">Visualizar</a>
+                    <td>
+                        <a href="{{route('carrinho.add', $produto->PRODUTO_ID)}}" class="btn btn-primary btn-sm">Adicionar ao carrinho</a>
                     </td>
                 </tr>
                 @endforeach
