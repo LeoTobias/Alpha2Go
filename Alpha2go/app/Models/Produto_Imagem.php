@@ -15,5 +15,11 @@ class Produto_Imagem extends Model
 
     protected $primaryKey = "IMAGEM_ID";
 
+    protected $foreignKey = "PRODUTO_ID";
+
     public $timestamps = false;
+
+    public function Produto() {
+        return $this->belongsTo(Produto::class, 'PRODUTO_ID');
+}
 }
