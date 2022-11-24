@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Produto;
 
 
 class Categoria extends Model
@@ -17,8 +18,8 @@ class Categoria extends Model
 
     public $timestamps = false;
 
-     public function Produto() {
-    return $this->hasMany(Produto::class, 'CATEGORIA_ID');
-  }
+    public function Produto() {
+      return $this->hasMany(Produto::class, 'CATEGORIA_ID');
+    }
 }
 

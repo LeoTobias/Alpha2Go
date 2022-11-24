@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Categoria;
+use App\Models\Produto_Imagem;
 
 
 class Produto extends Model
@@ -28,5 +30,3 @@ class Produto extends Model
     }
 
 }
-
-

@@ -12,7 +12,7 @@ class CategoriaController extends Controller
         public function index()
         {
             $categoria = Categoria::all();
-            return view('categoria.index')->with('categorias', $categoria);
+            return view('site.home')->with('categorias', $categoria);
         }
 
 

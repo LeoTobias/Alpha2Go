@@ -40,7 +40,7 @@
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="">Home</a></li>
+          <li><a href="{{ url('/.#home') }}">Home</a></li>
           <li><a href="{{ url('/.#cardapio') }}">Cardapio</a></li>
           <li><a href="{{ url('/.#contato') }}">Contato</a></li>
         </ul>

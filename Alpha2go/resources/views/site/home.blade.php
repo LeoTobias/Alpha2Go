@@ -2,7 +2,7 @@
 @extends('site.master.layout')
 @section('conteudo')
 
-<div class="carousel slide" data-ride="carousel">
+<div class="carousel slide" id="home" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100 carouselPrincipal" src="{{ asset('site/imagens/hamburguer.jpeg') }}" alt="Primeiro Slide">
@@ -27,7 +27,7 @@
         <div class="section-cardapio ">
           <h2>Nosso Cardapio</h2>
         </div>
-
+      
         <ul class="nav nav-tabs d-flex justify-content-center">
           <li class="nav-item">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#cardapio-pizzas">
@@ -54,79 +54,22 @@
               <p>cardapio</p>
               <h3>Pizzas</h3>
             </div>
-
             <div class="row gy-5">
-              <div class="col-lg-4 cardapio-item">
-                <a href="#"><img src="{{ asset('site/imagens/PizzaCalabresa.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                <h4>Pizza de Calabresa</h4>
-                <p class="ingredientes">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="preco">
-                  R$ 45,00
-                </p>
-                <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-              </div>
-
-              <div class="col-lg-4 cardapio-item">
-                <a href="#" ><img src="{{ asset('site/imagens/PizzaMussarela.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                <h4>Pizza de Mussarela</h4>
-                <p class="ingredientes">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="preco">
-                  R$ 48,00
-                </p>
-                <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-              </div>
-
-              <div class="col-lg-4 cardapio-item">
-                <a href="#" ><img src="{{ asset('site/imagens/PizzaPortuguesa.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                <h4>Pizza Portuguesa</h4>
-                <p class="ingredientes">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="preco">
-                  R$ 55,00
-                </p>
-                <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-              </div>
-
-              <div class="col-lg-4 cardapio-item">
-                <a href="#" ><img src="{{ asset('site/imagens/PizzaSiciliana.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                <h4>Pizza Siciliana</h4>
-                <p class="ingredientes">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="preco">
-                 R$ 58,00
-                </p>
-                <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-              </div>
-
-              <div class="col-lg-4 cardapio-item">
-                <a href="#" ><img src="{{ asset('site/imagens/PizzaPortuguesa.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                <h4>Pizza Portuguesa</h4>
-                <p class="ingredientes">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="preco">
-                  R$ 55,00
-                </p>
-                <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-              </div>
-
-              <div class="col-lg-4 cardapio-item">
-                <a href="#" ><img src="{{ asset('site/imagens/PizzaSiciliana.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                <h4>Pizza Siciliana</h4>
-                <p class="ingredientes">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="preco">
-                 R$ 58,00
-                </p>
-                <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-              </div>
+              @foreach($produtos as $produto)
+                $if($produto->Categoria)
+                @endif
+                <div class="col-lg-4 cardapio-item">
+                  <a href="#"><img src="{{ asset('site/imagens/PizzaCalabresa.png') }}" class="cardapio-img img-fluid" alt=""></a>
+                  <h4>{{$produto->PRODUTO_NOME}}</h4>
+                  <p class="ingredientes">
+                    Lorem, deren, trataro, filede, nerada
+                  </p>
+                  <p class="preco">
+                    R$ 45,00
+                  </p>
+                  <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
+                </div>
+                @endforeach
             </div>
           </div>
         </div>
