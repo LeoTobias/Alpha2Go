@@ -1,4 +1,4 @@
-@extends('site.master.layout')
+@extends('layouts.layout')
 @section('conteudo')
 
 <div class="container" style="padding-top: 8%;">

@@ -9,17 +9,10 @@ class Produto_Estoque extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['PRODUTO_ID','PRODUTO_QTD'];
-
-    protected $table="PRODUTO_ESTOQUE";
-
-    protected $foreignKey = "PRODUTO_ID";
+    protected $table = 'PRODUTO_ESTOQUE';
 
     public $timestamps = false;
 
-    public function Produto() {
-        return $this->belongsTo(Produto::class, 'PRODUTO_ID');
-
-}
+    protected $primaryKey = 'PRODUTO_ID';
 
 }
