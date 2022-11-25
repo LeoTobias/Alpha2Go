@@ -35,23 +35,24 @@
 
                 </div>
             </div>
+            @foreach($carrinho_item as $item)
             <div class="row flex-tab">
                 <div class="col-md-5">
                     <div class="carrinho_item">
                         <img src="{{ asset('site/imagens/PizzaCalabresa.png') }}" class="img-fluid">
                         <div class="caption flex-column">
-                            <h4>Pizza Calabresa</h4>
+                            <h4>{{$item->Produto->PRODUTO_NOME}}</h4>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="preco">
-                        <p>R$ 26,35</p>
+                        <p>{{$item->Produto->PRODUTO_PRECO}}</p>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <button class="menos"><i class="bi bi-arrow-left-circle-fill"></i></button>
-                    <span class="contagem">1</span>
+                    <span class="contagem">{{$item->ITEM_QTD}}</span>
                     <button class="mais"><i class="bi bi-arrow-right-circle-fill"></i></button>
                 </div>
                 <div class="col-md-2">
@@ -63,7 +64,8 @@
                     <a href="#"><img src="{{ asset('site/imagens/remove-icon.png') }}" class="img-fluid"></a>
                 </div>
             </div>
-            <div class="row flex-tab">
+            @endforeach
+            <!-- <div class="row flex-tab">
                 <div class="col-md-5">
                     <div class="carrinho_item">
                         <img src="{{ asset('site/imagens/PizzaMussarela.png') }}" class="img-fluid">
@@ -118,7 +120,7 @@
                 <div class="col-md-1 text-center">
                     <a href="#"><img src="{{ asset('site/imagens/remove-icon.png') }}" class="img-fluid"></a>
                 </div>
-            </div>
+            </div> -->
             <div class="row carrinhoTotal">
                 <div class="col-md align-items-center">
                     <div class="finalCompra">
@@ -154,7 +156,7 @@
                 <div class="col-md-3">
                    <a href="{{ url('sucesso') }}">
                    <button  type="button" class="btn btn-outline-primary-red">Finalizar compra</button>
-                   </a> 
+                   </a>
                 </div>
             </div>
             <hr><br>

@@ -10,7 +10,7 @@
         <tbody>
             @foreach($carrinho_item as $item)
             <tr>
-                <td>{{$item->Product->PRODUTO_NOME}}</td>
+                <td>{{$item->Produto->PRODUTO_NOME}}</td>
                 <td>{{$item->ITEM_QTD}}</td>
                 <td>{{$item->Produto->PRODUTO_PRECO}}</td>
             </tr>

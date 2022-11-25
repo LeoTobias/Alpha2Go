@@ -1,5 +1,3 @@
-@extends('layouts.store')
-
 @section('content')
 <style>
     .espacamento{
@@ -9,7 +7,7 @@
 <div class="row py5">
     <div class="text-center">
     <h2 class="lt-branca"> {{ $categoria->CATEGORIA_NOME }} </h2>
-        <span class="text-muted lt-cinza"> Confira abaixo os itens {{$categoria->CATEGORIA_NOME}} </span>  
+        <span class="text-muted lt-cinza"> Confira abaixo os itens {{$categoria->CATEGORIA_NOME}} </span>
     </div>
 </div>
     <div class="row">
@@ -30,7 +28,6 @@
     @endforeach
     </div>
     <div class="d-flex justify-content-center mt-5">
-        {{ $produtos->links() }}
     </div>
 </section>
 @endsection

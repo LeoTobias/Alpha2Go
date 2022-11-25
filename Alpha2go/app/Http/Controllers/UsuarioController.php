@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -14,10 +14,9 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        $usuario = Usuario::all();
-        return view('usuario.index')->with('usuarios', $user);
+        $usuario = User::all();
+        return view('usuario.index')->with('usuarios', User::all());
     }
-
 
     public function create()
     {
