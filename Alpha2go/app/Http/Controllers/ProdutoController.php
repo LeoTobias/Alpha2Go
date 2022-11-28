@@ -15,9 +15,17 @@ class ProdutoController extends Controller
         return view('site.home')->with('produtos', $produto);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $produto = Produto::ativos();
+        if (isset($request->categoria)) {
+            $produto = Produto::where('CATEGORIA_ID', '=', $request->categoria)
+                                ->where('PRODUTO_ATIVO', TRUE)
+                                ->get();
+
+        } else {
+            $produto = Produto::ativos();
+        }
+
         return view('produto.index')->with('produtos', $produto);
     }
 

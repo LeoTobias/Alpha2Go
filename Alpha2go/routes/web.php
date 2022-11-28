@@ -14,7 +14,7 @@ require __DIR__.'/auth.php';
 
 Route::get('/', [ProdutoController::class, 'home'])->name('home');
 
-Route::get('/login', function(){return view ('site.login');});
+Route::get('/login', function(){return view ('site.login');})->name('login');
 
 Route::get('/checkout', function(){return view ('site.checkout');});
 

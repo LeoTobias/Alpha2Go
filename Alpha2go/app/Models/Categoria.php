@@ -18,8 +18,11 @@ class Categoria extends Model
 
     public $timestamps = false;
 
+    public static function Ativo() {
+        return Categoria::where('CATEGORIA_ATIVO', TRUE)->get();
+    }
+
     public function Produto() {
       return $this->hasMany(Produto::class, 'CATEGORIA_ID');
     }
 }
-
