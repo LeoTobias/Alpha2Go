@@ -1,8 +1,13 @@
 @extends('layouts.layout')
 @section('conteudo')
 
-<div class="container" style="padding-top: 10%;">
+<div class="container" style="padding-top: 5%;">
         <section class="col">
+            @if (session()->has('error-message'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session()->get('error-message') }}
+                </div>
+            @endif
             <div>
                 <div><h3>Otima escolha!</h3></div>
                 <div><h1>Seu carrinho</h1></div>
@@ -26,7 +31,7 @@
                 <div class="col-md-2">
                     <div class="total_titulo">Total</div>
                 </div>
-                
+
                 <div class="col-md-1"></div>
             </div>
             @foreach($carrinho_item as $item)
@@ -45,7 +50,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="preco">
-                        <p>R$ {{$item->Produto->PRODUTO_PRECO}}</p>
+                        <p>R$ {{$item->Produto->PRODUTO_PRECO - $item->Produto->PRODUTO_DESCONTO}}</p>
                     </div>
                 </div>
                 <div class="col-md-2">

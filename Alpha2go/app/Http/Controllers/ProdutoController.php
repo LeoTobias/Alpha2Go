@@ -20,6 +20,7 @@ class ProdutoController extends Controller
         if (isset($request->categoria)) {
             $produto = Produto::where('CATEGORIA_ID', '=', $request->categoria)
                                 ->where('PRODUTO_ATIVO', TRUE)
+                                ->whereRelation('Estoque', 'PRODUTO_QTD', '>', 0)
                                 ->get();
 
         } else {

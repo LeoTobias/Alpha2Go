@@ -44,9 +44,10 @@
         </div>
 
         <ul>
-            @foreach (App\Models\Categoria::ativo() as $categoria)
-                <li><a href="?categoria={{$categoria->CATEGORIA_ID}}">{{$categoria->CATEGORIA_NOME}}</a></li>
-            @endforeach
+            <li><a href="{{route('produto.index')}}">Todos</a></li>
+        @foreach (App\Models\Categoria::ativo() as $categoria)
+            <li><a href="?categoria={{$categoria->CATEGORIA_ID}}">{{$categoria->CATEGORIA_NOME}}</a></li>
+        @endforeach
         </ul>
 
     </main>

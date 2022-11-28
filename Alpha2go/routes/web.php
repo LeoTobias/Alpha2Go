@@ -23,13 +23,14 @@ Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('prod
 
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 Route::get('/categoria/{categoria}', [CategoriaController::class, 'show'])->name('categoria.show');
+Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
 
 Route::group( ['middleware' => ['auth'] ], function() {
     Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
     Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usuario.show');
 
+
     Route::post('/carrinho/add/{produto}', [CarrinhoController::class, 'add'])->name('carrinho.add');
-    Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
 
     Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
     Route::get('/pedido/{id}', [PedidoController::class, 'show'])->name('pedido');

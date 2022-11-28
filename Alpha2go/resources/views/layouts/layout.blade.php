@@ -55,7 +55,7 @@
                 <li><a class="btn-book-a-table" href="{{ route('login') }}"><img id="carrinho" src="{{ asset('site/imagens/user.png') }}"></a></li>
             @endguest
 
-          <li><a class="btn-book-a-table" href="{{ url('carrinho') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a></li>
+          <li><a class="btn-book-a-table" href="{{ route('carrinho.index') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a></li>
         </ul>
       </nav>
     </div>

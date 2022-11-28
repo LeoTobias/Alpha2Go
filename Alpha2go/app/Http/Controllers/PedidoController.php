@@ -25,23 +25,24 @@ class PedidoController extends Controller
         ]);
     }
 
-
-    public function create()
-    {
-        //
-    }
-
-
     public function store(Request $request)
     {
         $dataCompra = new \DateTime('', new \DateTimeZone('America/Sao_Paulo'));
 
         $produtosCarrinho = Carrinho::where('USUARIO_ID', Auth::user()->USUARIO_ID)
-            ->where('ITEM_QTD', '>', 0)->get()->all();
+                                            ->where('ITEM_QTD', '>', 0)
+                                            ->get()
+                                            ->all();
+
+        if (!$produtosCarrinho) {
+            session()->flash('error-message', 'Carrinho vazio, adicione um produto ao carrinho para prosseguir com a compra');
+
+            return redirect()->back();
+        }
 
         $pedido = Pedido::create([
             'USUARIO_ID'  => Auth::user()->USUARIO_ID,
-            'STATUS_ID'   => 1, //pendente
+            'STATUS_ID'   => 1,
             'PEDIDO_DATA' => $dataCompra->format('Y-m-d')
         ]);
 
@@ -56,7 +57,7 @@ class PedidoController extends Controller
                 ]);
 
                 $estoqueAtual = Produto_Estoque::where('PRODUTO_ID', $comida->PRODUTO_ID)->first()->PRODUTO_QTD;
-                
+
                 Produto_Estoque::where('PRODUTO_ID',  $comida->PRODUTO_ID)
                     ->update(['PRODUTO_QTD' => $estoqueAtual - $comida->ITEM_QTD]);
 
