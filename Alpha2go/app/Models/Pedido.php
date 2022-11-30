@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pedido extends Model
 {
     use HasFactory;
-     
+
     protected $fillable = [
   //'PEDIDO_ID',
       'USUARIO_ID',
@@ -25,10 +25,14 @@ class Pedido extends Model
     public $foreignKey = "USUARIO_ID";
 
     public function Usuario() {
-    return $this->belongsTo(Usuario::class, 'USUARIO_ID');
-}
-  public function Pedido_Status() {
-    return $this->belongsTo(Pedido_Status::class, 'STATUS_ID');
-    
-  }
+        return $this->belongsTo(Usuario::class, 'USUARIO_ID');
+    }
+
+    public function Itens() {
+        return $this->hasMany(Pedido_Item::class, 'PEDIDO_ID');
+    }
+
+    public function Pedido_Status() {
+        return $this->belongsTo(Pedido_Status::class, 'STATUS_ID');
+    }
 }

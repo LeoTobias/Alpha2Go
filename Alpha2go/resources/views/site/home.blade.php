@@ -1,5 +1,5 @@
 
-@extends('site.master.layout')
+@extends('layouts.layout')
 @section('conteudo')
 
 <div class="carousel slide" id="home" data-ride="carousel">
@@ -27,7 +27,7 @@
         <div class="section-cardapio ">
           <h2>Nosso Cardapio</h2>
         </div>
-      
+
         <ul class="nav nav-tabs d-flex justify-content-center">
           <li class="nav-item">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#cardapio-pizzas">

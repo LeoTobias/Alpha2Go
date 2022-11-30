@@ -41,20 +41,27 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{{ url('/.#home') }}">Home</a></li>
-          <li><a href="{{ url('/.#cardapio') }}">Cardapio</a></li>
+          <li><a href="{{ route('produto.index') }}">Cardapio</a></li>
           <li><a href="{{ url('/.#contato') }}">Contato</a></li>
         </ul>
       </nav>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="btn-book-a-table" href="{{ url('login') }}"><img id="carrinho" src="{{ asset('site/imagens/user.png') }}"></a></li>
-          <li><a class="btn-book-a-table" href="{{ url('carrinho') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a></li>
+            @auth
+                <li><a class="btn-book-a-table" href="{{ route('pedidos') }}"><img id="carrinho" src="{{ asset('site/imagens/user.png') }}"></a></li>
+            @endauth
+
+            @guest
+                <li><a class="btn-book-a-table" href="{{ route('login') }}"><img id="carrinho" src="{{ asset('site/imagens/user.png') }}"></a></li>
+            @endguest
+
+          <li><a class="btn-book-a-table" href="{{ route('carrinho.index') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <div class="conteudo">
+  <div class="conteudo container-xxl">
     @yield('conteudo')
   </div>
 
@@ -109,8 +116,5 @@
     </div>
   </footer>
 
-
-
 </body>
-
 </html>

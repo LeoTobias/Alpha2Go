@@ -5,49 +5,33 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CarrinhoController;
+use App\Http\Controllers\PedidoController;
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 require __DIR__.'/auth.php';
 
+
 Route::get('/', [ProdutoController::class, 'home'])->name('home');
 
-Route::get('/login', function(){
-    return view ('site.home');
-});
+Route::get('/login', function(){return view ('site.login');})->name('login');
 
-Route::get('/carrinho', function(){
-    return redirect(route('carrinho.index'));
-});
-
-Route::get('/sucesso', function(){
-    return view ('site.sucesso');
-});
-
-Route::get('/checkout', function(){
-    return view ('site.checkout');
-});
+Route::get('/checkout', function(){return view ('site.checkout');});
 
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
 Route::get('/produto/{produto}', [ProdutoController::class, 'show'])->name('produto.show');
 
-Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
-Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usuario.show');
-
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 Route::get('/categoria/{categoria}', [CategoriaController::class, 'show'])->name('categoria.show');
-
-Route::get('/carrinho/add/{produto}', [CarrinhoController::class, 'add'])->name('carrinho.add');
 Route::get('/carrinho', [CarrinhoController::class, 'index'])->name('carrinho.index');
-//Route::get('/carrinho/{carrinho}', [CarrinhoController::class, 'show'])->name('carrinho.show');
 
+Route::group( ['middleware' => ['auth'] ], function() {
+    Route::get('/usuario', [UsuarioController::class, 'index'])->name('usuario.index');
+    Route::get('/usuario/{usuario}', [UsuarioController::class, 'show'])->name('usuario.show');
+
+
+    Route::post('/carrinho/add/{produto}', [CarrinhoController::class, 'add'])->name('carrinho.add');
+
+    Route::get('/pedidos', [PedidoController::class, 'index'])->name('pedidos');
+    Route::get('/pedido/{id}', [PedidoController::class, 'show'])->name('pedido');
+    Route::post('/pedido', [PedidoController::class, 'store'])->name('pedido.store');
+});
