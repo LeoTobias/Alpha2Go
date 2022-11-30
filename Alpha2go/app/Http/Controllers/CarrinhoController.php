@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\Carrinho;
+use Illuminate\Support\Facades\Auth;
 
 class CarrinhoController extends Controller
 {
@@ -34,8 +35,8 @@ class CarrinhoController extends Controller
 
 
    public function remove (Produto $Produto) {
-     $item = Carrinho::where([['PRODUTO_ID','=',$PRODUTO->ID],
-                  ['USUARIO_ID','=',usuario()->id]
+     $item = Carrinho::where([['PRODUTO_ID','=', $Produto->PRODUTO_ID],
+                  ['USUARIO_ID','=',Auth::user()->USUARIO_ID]
                   ])->first();
     if ($item) {
       $item->update([
@@ -50,7 +51,7 @@ class CarrinhoController extends Controller
 
 
 public function show(){
-  $carrinho = Carrinho::where(['USUARIO_ID', '=', usuario()->id])->get();
+  $carrinho = Carrinho::where(['USUARIO_ID', '=', Auth::user()->USUARIO_ID])->get();
   return view ('carrinho.show')->with('carrinho', $carrinho);
 }
 

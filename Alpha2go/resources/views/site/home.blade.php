@@ -56,8 +56,6 @@
             </div>
             <div class="row gy-5">
               @foreach($produtos as $produto)
-                $if($produto->Categoria)
-                @endif
                 <div class="col-lg-4 cardapio-item">
                   <a href="#"><img src="{{ asset('site/imagens/PizzaCalabresa.png') }}" class="cardapio-img img-fluid" alt=""></a>
                   <h4>{{$produto->PRODUTO_NOME}}</h4>

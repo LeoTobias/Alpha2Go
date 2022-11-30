@@ -20,12 +20,10 @@ use App\Http\Controllers\CarrinhoController;
 
 require __DIR__.'/auth.php';
 
-Route::get('/', function(){
-    return view ('site.home');
-});
+Route::get('/', [ProdutoController::class, 'home'])->name('home');
 
 Route::get('/login', function(){
-    return view ('site.login');
+    return view ('site.home');
 });
 
 Route::get('/carrinho', function(){
