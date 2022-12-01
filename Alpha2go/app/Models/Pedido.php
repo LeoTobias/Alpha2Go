@@ -4,6 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Usuario;
+use App\Models\Pedido_Item;
+use App\Models\Pedido_Status;
+
 
 class Pedido extends Model
 {

@@ -29,28 +29,37 @@ class CarrinhoController extends Controller
         ]);
     }
 
-    public function add ( Produto $Produto)
+    public function add ( Request $request, $id)
     {
-         $item = Carrinho::where([['PRODUTO_ID','=',$Produto->PRODUTO_ID],
-                                ['USUARIO_ID','=', Auth::user()->USUARIO_ID]
-                                ])->first();
+        $cart = Carrinho::where([
+            'USUARIO_ID' => Auth::user()->USUARIO_ID,
+            'PRODUTO_ID' => $id
+        ])->first(); //pega uma
 
-        if ($item) {
-            $item->update(['ITEM_QTD' => $item->ITEM_QTD + 1]);
+        if ($cart) {
+            $estoque = Produto::where('PRODUTO_ID', $id)->first()->Estoque->PRODUTO_QTD;
+
+            if ($request->qtd > 0) //se o estoque for maior que a soma
+                $cart->update(['ITEM_QTD' => $request->qtd > $estoque ? $estoque : $request->qtd]);
+            else
+                $cart->update(['ITEM_QTD' => 0]);
+
+        } else {
+            $cart = Carrinho::create([
+                'USUARIO_ID' => Auth::user()->USUARIO_ID,
+                'PRODUTO_ID' => $id,
+                'ITEM_QTD'   => $request->qtd
+            ]);
         }
 
-        Carrinho::create ([
-            'USUARIO_ID' => Auth::user()->USUARIO_ID,
-            'PRODUTO_ID' => $Produto->PRODUTO_ID,
-            'ITEM_QTD' => 1
-        ]);
+        session()->flash('message', 'Produto adicionado ao carrinho com sucesso!'); //zika d+
 
         return redirect()->back();
     }
 
 
     public function remove (Produto $Produto) {
-        $item = Carrinho::where([['PRODUTO_ID','=',$PRODUTO->ID],
+        $item = Carrinho::where([['PRODUTO_ID','=',$Produto->PRODUTO_ID],
                                 ['USUARIO_ID','=', Auth::user()->USUARIO_ID]
                                 ])->first();
 

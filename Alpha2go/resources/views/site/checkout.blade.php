@@ -26,27 +26,27 @@
                                 </select>
                             </div>
                             <div class="name">
-                               <input type="text" class="custom-control" id="usr1" placeholder="First Name">
-                               <input type="text" class="custom-control" id="usr2" placeholder="Last Name">
+                               <input type="text" class="custom-control" id="usr1" placeholder="First Name" autocomplete="off">
+                               <input type="text" class="custom-control" id="usr2" placeholder="Last Name" autocomplete="off">
                             </div>
                             <div class="email_phone">
-                                <input type="text" class="custom-control" id="usr3" placeholder="Email">
-                                <input type="text" class="custom-control" id="usr4" placeholder="Phone">
+                                <input type="text" class="custom-control" id="usr3" placeholder="Email" autocomplete="off">
+                                <input type="text" class="custom-control" id="usr4" placeholder="Phone" autocomplete="off">
                             </div>
                             <div class="company_name">
-                                <input type="text" class="custom-control" id="usr5" placeholder="Company name">
+                                <input type="text" class="custom-control" id="usr5" placeholder="Company name" autocomplete="off">
                             </div>
                             <div class="company_address">
-                                <input type="text" class="custom-control" id="usr6" placeholder="Street address">
+                                <input type="text" class="custom-control" id="usr6" placeholder="Street address" autocomplete="off">
                             </div>
 
                             <div class="appartment_town">
-                                <input type="text" class="custom-control" id="usr7" placeholder="Appartment">
-                                <input type="text" class="custom-control" id="usr8" placeholder="Town / City">
+                                <input type="text" class="custom-control" id="usr7" placeholder="Appartment" autocomplete="off">
+                                <input type="text" class="custom-control" id="usr8" placeholder="Town / City" autocomplete="off">
                             </div>
                             <div class="state_postal">
-                                <input type="text" class="custom-control" id="usr9" placeholder="State">
-                                <input type="text" class="custom-control" id="usr10" placeholder="PostalCode / Zip">
+                                <input type="text" class="custom-control" id="usr9" placeholder="State" autocomplete="off">
+                                <input type="text" class="custom-control" id="usr10" placeholder="PostalCode / Zip" autocomplete="off">
                             </div>
                         </form>
                     </div>

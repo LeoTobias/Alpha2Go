@@ -32,7 +32,7 @@
 
 <body>
 
-  <header id="header" class="header navbar fixed-top d-flex align-items-center col">
+  <header id="header" class="header navbar d-flex align-items-center col">
     <div class="container d-flex align-items-center justify-content-between">
       <a href="{{url('/')}}" class="logo d-flex align-items-center">
         <img src="{{ asset('site/imagens/logoAlpha.png') }}" alt="">
@@ -55,7 +55,16 @@
                 <li><a class="btn-book-a-table" href="{{ route('login') }}"><img id="carrinho" src="{{ asset('site/imagens/user.png') }}"></a></li>
             @endguest
 
-          <li><a class="btn-book-a-table" href="{{ route('carrinho.index') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a></li>
+            <li><a class="btn-book-a-table" href="{{ route('carrinho.index') }}"><img id="carrinho" src="{{ asset('site/imagens/carrinho.png') }}"></a></li>
+            @auth
+              <li>
+                <form action="{{ route('logout') }}" method="POST">
+                  @csrf
+                  <button class="btn-book-a-table border-0"><i class="bi-door-closed-fill"></i></button>
+                </form>
+              </li>
+            @endauth
+
         </ul>
       </nav>
     </div>

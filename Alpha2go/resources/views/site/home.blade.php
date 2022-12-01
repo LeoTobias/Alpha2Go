@@ -8,71 +8,20 @@
       <img class="d-block w-100 carouselPrincipal" src="{{ asset('site/imagens/hamburguer.jpeg') }}" alt="Primeiro Slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100 carouselPrincipal" src="{{ asset('site/imagens/pizza.jpg') }}" alt="Segundo Slide">
+      <img class="d-block w-100 carouselPrincipal" src="{{ asset('site/imagens/PizzaCalabresa.png') }}" alt="Segundo Slide">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item ">
       <img class="d-block w-100 carouselPrincipal" src="{{ asset('site/imagens/sushi.jpg') }}" alt="Terceiro Slide">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#home" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#home" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
   </a>
 </div>
 
-<section id="cardapio" class="cardapio">
-      <div class="container">
-        <div class="section-cardapio ">
-          <h2>Nosso Cardapio</h2>
-        </div>
-
-        <ul class="nav nav-tabs d-flex justify-content-center">
-          <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#cardapio-pizzas">
-              <h4>Pizzas</h4>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#cardapio-burguer">
-              <h4>Hamburgueres</h4>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#cardapio-japa">
-              <h4>Comida Japonesa</h4>
-            </a>
-          </li>
-        </ul>
-
-        <div class="tab-content">
-          <div class="tab-pane fade active show" id="cardapio-pizzas">
-            <div class="tab-header text-center">
-              <p>cardapio</p>
-              <h3>Pizzas</h3>
-            </div>
-            <div class="row gy-5">
-              @foreach($produtos as $produto)
-                <div class="col-lg-4 cardapio-item">
-                  <a href="#"><img src="{{ asset('site/imagens/PizzaCalabresa.png') }}" class="cardapio-img img-fluid" alt=""></a>
-                  <h4>{{$produto->PRODUTO_NOME}}</h4>
-                  <p class="ingredientes">
-                    Lorem, deren, trataro, filede, nerada
-                  </p>
-                  <p class="preco">
-                    R$ 45,00
-                  </p>
-                  <button type="button" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-                </div>
-                @endforeach
-            </div>
-          </div>
-        </div>
-      </div>
-</section>
 
 <section id="contato" class="contato">
       <div class="container">

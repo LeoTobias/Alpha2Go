@@ -8,47 +8,59 @@
             </div>
         @endif
 
-        <h1> Lista de Produtos </h1>
+        <section id="cardapio" class="cardapio">
+            <div class="container">
+            <div class="section-cardapio ">
+            <h2>Nosso Cardapio</h2>
+            </div>
+                <ul class="nav nav-tabs d-flex justify-content-center">
+                    @foreach (App\Models\Categoria::ativo() as $categoria)
+                    <li class="nav-item">
+                        <a href="?categoria={{$categoria->CATEGORIA_ID}}" class="nav-link active show">
+                        <h4>{{$categoria->CATEGORIA_NOME}}</h4>
+                        </a>
+                    </li>
+                    @endforeach
+                </ul>
 
-        <div class="row row-cols-3">
-            @foreach($produtos as $produto)
-                <div class="col border">
+            <div class="tab-content">
+            <div class="tab-pane fade active show" id="cardapio-pizzas">
+                <div class="tab-header text-center">
+                <p>cardapio</p>
+                </div>
+                <div class="row gy-5">
+                @foreach($produtos as $produto)
+                    <div class="col-lg-4 cardapio-item d-flex flex-column align-items-center">
                     <h4>{{$produto->PRODUTO_NOME}}</h4>
-
-                @if(count($produto->Imagens) > 0)
-                    <a href="#"><img src="{{ $produto->Imagens[0]->IMAGEM_URL }}" class="cardapio-img img-fluid" alt=""></a>
-                @else
-                    <a href="#"><img aria-placeholder="teste" class="cardapio-img img-fluid" alt=""></a>
-                @endif
-
-                    <p class="ingredientes">{{ $produto->PRODUTO_DESC}}</p>
-
-                @if ($produto->PRODUTO_DESCONTO > 0)
-                    <span class="badge rounded-0 rounded-start position-absolute translate-middle bg-danger fs-5 desconto">{{number_format($produto->PRODUTO_DESCONTO / $produto->PRODUTO_PRECO * 100, 0)}}%</span>
-                    <div class="d-flex">
-                        <span class="fw-semibold me-3 fs-5">R$ {{number_format($produto->PRODUTO_PRECO - $produto->PRODUTO_DESCONTO, 2)}}</span>
-                        <span class="fw-semibold"><s>R$ {{$produto->PRODUTO_PRECO}}</s></span>
+                        @if(count($produto->Imagens) > 0)
+                            <a href="#"><img src="{{ $produto->Imagens[0]->IMAGEM_URL }}" class="cardapio-img img-fluid" alt=""></a>
+                        @else
+                            <a href="#"><img aria-placeholder="teste" class="cardapio-img img-fluid" alt=""></a>
+                        @endif
+                    <div class="ingredientes">
+                      <span  class="text-center" style=" display: block; max-width: 200px;"> {{ $produto->PRODUTO_DESC}} </span> 
                     </div>
-                @else
-                    <div class="d-block">
-                        <span class="fw-semibold fs-5">R$ {{$produto->PRODUTO_PRECO}}</span>
+                        @if ($produto->PRODUTO_DESCONTO > 0)
+                            <div class="d-flex preco">
+                                <span class="fw-semibold me-3 fs-5">R$ {{number_format($produto->PRODUTO_PRECO - $produto->PRODUTO_DESCONTO, 2)}}</span>
+                                <span class="fw-semibold"><s>R$ {{$produto->PRODUTO_PRECO}}</s></span>
+                            </div>
+                        @else
+                            <div class="d-block preco">
+                                <span class="fw-semibold fs-5">R$ {{$produto->PRODUTO_PRECO}}</span>
+                            </div>
+                        @endif
+                    <form action="{{route('carrinho.add', $produto->PRODUTO_ID)}}" method="post">
+                        @csrf
+                        <input type="hidden" name="qtd" value="1">
+                        <button type="submit" class="btn btn-danger btn-sm" style="margin-bottom: 5px;">Adicionar ao carrinho</button>
+                    </form>
                     </div>
-                @endif
-
-                  <form action="{{route('carrinho.add', $produto->PRODUTO_ID)}}" method="post">
-                      @csrf
-                      <button type="submit" class="btn btn-danger btn-sm">Adicionar ao carrinho</button>
-                  </form>
-              </div>
-            @endforeach
+                    @endforeach
+                </div>
+            </div>
+            </div>
         </div>
-
-        <ul>
-            <li><a href="{{route('produto.index')}}">Todos</a></li>
-        @foreach (App\Models\Categoria::ativo() as $categoria)
-            <li><a href="?categoria={{$categoria->CATEGORIA_ID}}">{{$categoria->CATEGORIA_NOME}}</a></li>
-        @endforeach
-        </ul>
-
+        </section>
     </main>
 @endsection

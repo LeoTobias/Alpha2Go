@@ -26,13 +26,13 @@
                         <div class="usuario">
                             <div class="form-group">
                                 <label for="usr">Usuario:</label>
-                                <input type="text" class="form-control" id="usr">
+                                <input type="text" class="form-control" id="usr" name="email" autocomplete="off">
                             </div>
                         </div>
                         <div class="password">
                             <div class="form-group">
                                 <label for="pwd">Senha:</label>
-                                <input type="password" class="form-control" id="pwd">
+                                <input type="password" class="form-control" id="pwd" name="password" autocomplete="off">
                             </div>
                         </div>
 
@@ -55,20 +55,20 @@
                         <div class="usuario">
                             <div class="form-group">
                                 <label for="usr">Nome e Sobrenome:</label>
-                                <input type="text" class="form-control" id="usr" name="nome">
+                                <input type="text" class="form-control" id="usr" name="nome" autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="usr">Email:</label>
-                                <input type="text" class="form-control" id="usr" name="email">
+                                <input type="text" class="form-control" id="usr" name="email" autocomplete="off">
                             </div>
                             <div class="form-group">
                                 <label for="usr">CPF:</label>
-                                <input type="text" class="form-control" id="usr" name="cpf">
+                                <input type="text" class="form-control" id="usr" name="cpf" autocomplete="off">
                             </div>
                             <div class="password">
                                 <div class="form-group">
                                     <label for="pwd">Senha:</label>
-                                    <input type="password" class="form-control" id="pwd" name="senha">
+                                    <input type="password" class="form-control" id="pwd" name="senha" autocomplete="off">
                                 </div>
                             </div>
                         </div>
